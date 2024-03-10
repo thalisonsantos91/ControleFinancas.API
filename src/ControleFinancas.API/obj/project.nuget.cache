@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "iVylFrOdmqnstYWjR4xbIQljalbHgfpr2o0kIb1hMzOsB11i3XMFTXBp2CNpuodYgnWZBh+34EDSeKihd5Dw+A==",
+  "success": true,
+  "projectFilePath": "/Users/thalisonsantos/Documents/Projetos/ControleFinancas.API/ControleFinancas.API/src/ControleFinancas.API/ControleFinancas.API.csproj",
+  "expectedPackageFiles": [
+    "/Users/thalisonsantos/.nuget/packages/microsoft.aspnetcore.openapi/8.0.0/microsoft.aspnetcore.openapi.8.0.0.nupkg.sha512",
+    "/Users/thalisonsantos/.nuget/packages/microsoft.extensions.apidescription.server/6.0.5/microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "/Users/thalisonsantos/.nuget/packages/microsoft.openapi/1.4.3/microsoft.openapi.1.4.3.nupkg.sha512",
+    "/Users/thalisonsantos/.nuget/packages/swashbuckle.aspnetcore/6.4.0/swashbuckle.aspnetcore.6.4.0.nupkg.sha512",
+    "/Users/thalisonsantos/.nuget/packages/swashbuckle.aspnetcore.swagger/6.4.0/swashbuckle.aspnetcore.swagger.6.4.0.nupkg.sha512",
+    "/Users/thalisonsantos/.nuget/packages/swashbuckle.aspnetcore.swaggergen/6.4.0/swashbuckle.aspnetcore.swaggergen.6.4.0.nupkg.sha512",
+    "/Users/thalisonsantos/.nuget/packages/swashbuckle.aspnetcore.swaggerui/6.4.0/swashbuckle.aspnetcore.swaggerui.6.4.0.nupkg.sha512"
+  ],
+  "logs": []
+}
