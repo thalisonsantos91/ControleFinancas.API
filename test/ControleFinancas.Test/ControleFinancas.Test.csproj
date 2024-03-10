@@ -22,4 +22,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\ControleFinancas.API\ControleFinancas.API.csproj" />
+  </ItemGroup>
+
 </Project>
