@@ -4,6 +4,108 @@
     "/Users/thalisonsantos/Documents/Projetos/ControleFinancas.API/ControleFinancas.API/test/ControleFinancas.Test/ControleFinancas.Test.csproj": {}
   },
   "projects": {
+    "/Users/thalisonsantos/Documents/Projetos/ControleFinancas.API/ControleFinancas.API/src/ControleFinancas.API/ControleFinancas.API.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/thalisonsantos/Documents/Projetos/ControleFinancas.API/ControleFinancas.API/src/ControleFinancas.API/ControleFinancas.API.csproj",
+        "projectName": "ControleFinancas.API",
+        "projectPath": "/Users/thalisonsantos/Documents/Projetos/ControleFinancas.API/ControleFinancas.API/src/ControleFinancas.API/ControleFinancas.API.csproj",
+        "packagesPath": "/Users/thalisonsantos/.nuget/packages/",
+        "outputPath": "/Users/thalisonsantos/Documents/Projetos/ControleFinancas.API/ControleFinancas.API/src/ControleFinancas.API/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/thalisonsantos/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
+            "FluentValidation.AspNetCore": {
+              "target": "Package",
+              "version": "[10.4.0, )"
+            },
+            "Microsoft.AspNetCore.Authentication": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[7.0.10, )"
+            },
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[7.0.10, )"
+            },
+            "Microsoft.AspNetCore.OpenApi": {
+              "target": "Package",
+              "version": "[7.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "target": "Package",
+              "version": "[7.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "target": "Package",
+              "version": "[7.0.10, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[7.0.4, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.5.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.100/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "/Users/thalisonsantos/Documents/Projetos/ControleFinancas.API/ControleFinancas.API/test/ControleFinancas.Test/ControleFinancas.Test.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -25,7 +127,11 @@
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "/Users/thalisonsantos/Documents/Projetos/ControleFinancas.API/ControleFinancas.API/src/ControleFinancas.API/ControleFinancas.API.csproj": {
+                "projectPath": "/Users/thalisonsantos/Documents/Projetos/ControleFinancas.API/ControleFinancas.API/src/ControleFinancas.API/ControleFinancas.API.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

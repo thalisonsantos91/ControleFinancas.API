@@ -1,14 +1,5 @@
 using System.Text;
-using AutoMapper;
-using ControleFacil.Api.AutoMapper;
-using ControleFacil.Api.Contract.NaturezaDeLancamento;
-using ControleFacil.Api.Damain.Repository.Classes;
-using ControleFacil.Api.Damain.Repository.Interfaces;
-using ControleFacil.Api.Damain.Services.Classes;
-using ControleFacil.Api.Damain.Services.Interfaces;
-using ControleFacil.Api.Data;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 
@@ -27,39 +18,14 @@ app.Run();
 // Metodo que configrua as injeções de dependencia do projeto.
 static void ConfigurarInjecaoDeDependencia(WebApplicationBuilder builder)
 {
-    string? connectionString = builder.Configuration.GetConnectionString("PADRAO");
-    
-    builder.Services.AddDbContext<ApplicationContext>(options =>
-        options.UseNpgsql(connectionString), ServiceLifetime.Transient, ServiceLifetime.Transient);
-
-    var config = new MapperConfiguration(cfg => {
-        cfg.AddProfile<UsuarioProfile>();
-        cfg.AddProfile<NaturezaDeLancamentoProfile>();
-        cfg.AddProfile<ApagarProfile>();
-        cfg.AddProfile<AreceberProfile>();
-    });
-
-    IMapper mapper = config.CreateMapper();
-
     builder.Services
     .AddSingleton(builder.Configuration)
-    .AddSingleton(builder.Environment)
-    .AddSingleton(mapper)
-    .AddScoped<TokenService>()
-    .AddScoped<IUsuarioRepository, UsuarioRepository>()
-    .AddScoped<IUsuarioService, UsuarioService>()
-    .AddScoped<INaturezaDeLancamentoRepository, NaturezaDeLancamentoRepository>()
-    .AddScoped<IService<NaturezaDeLancamentoRequestContract, NaturezaDeLancamentoResponseContract, long>, NaturezaDeLancamentoService>()
-    .AddScoped<IApagarRepository, ApagarRepository>()
-    .AddScoped<IService<ApagarRequestContract, ApagarResponseContract, long>, ApagarService>()
-    .AddScoped<IAreceberRepository, AreceberRepository>()
-    .AddScoped<IService<AreceberRequestContract, AreceberResponseContract, long>, AreceberService>();
+    .AddSingleton(builder.Environment);
 }
 
 // Configura o serviços da API.
 static void ConfigurarServices(WebApplicationBuilder builder)
 {
-
     builder.Services
     .AddCors()
     .AddControllers().ConfigureApiBehaviorOptions(options =>
