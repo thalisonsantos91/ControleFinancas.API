@@ -8488,32 +8488,35 @@
     ]
   },
   "packageFolders": {
-    "/Users/thalisonsantos/.nuget/packages/": {}
+    "C:\\Users\\thali\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/thalisonsantos/Documents/Projetos/ControleFinancas.API/ControleFinancas.API/test/ControleFinancas.Test/ControleFinancas.Test.csproj",
+      "projectUniqueName": "C:\\Users\\thali\\OneDrive\\Desktop\\Documentos\\Projetos\\ControleFinancas.API\\ControleFinancas.API\\test\\ControleFinancas.Test\\ControleFinancas.Test.csproj",
       "projectName": "ControleFinancas.Test",
-      "projectPath": "/Users/thalisonsantos/Documents/Projetos/ControleFinancas.API/ControleFinancas.API/test/ControleFinancas.Test/ControleFinancas.Test.csproj",
-      "packagesPath": "/Users/thalisonsantos/.nuget/packages/",
-      "outputPath": "/Users/thalisonsantos/Documents/Projetos/ControleFinancas.API/ControleFinancas.API/test/ControleFinancas.Test/obj/",
+      "projectPath": "C:\\Users\\thali\\OneDrive\\Desktop\\Documentos\\Projetos\\ControleFinancas.API\\ControleFinancas.API\\test\\ControleFinancas.Test\\ControleFinancas.Test.csproj",
+      "packagesPath": "C:\\Users\\thali\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\thali\\OneDrive\\Desktop\\Documentos\\Projetos\\ControleFinancas.API\\ControleFinancas.API\\test\\ControleFinancas.Test\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/thalisonsantos/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\thali\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "http://nuget.cigamgestor.com.br/Gestor.Api.Nuget/nuget": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "/Users/thalisonsantos/Documents/Projetos/ControleFinancas.API/ControleFinancas.API/src/ControleFinancas.API/ControleFinancas.API.csproj": {
-              "projectPath": "/Users/thalisonsantos/Documents/Projetos/ControleFinancas.API/ControleFinancas.API/src/ControleFinancas.API/ControleFinancas.API.csproj"
+            "C:\\Users\\thali\\OneDrive\\Desktop\\Documentos\\Projetos\\ControleFinancas.API\\ControleFinancas.API\\src\\ControleFinancas.API\\ControleFinancas.API.csproj": {
+              "projectPath": "C:\\Users\\thali\\OneDrive\\Desktop\\Documentos\\Projetos\\ControleFinancas.API\\ControleFinancas.API\\src\\ControleFinancas.API\\ControleFinancas.API.csproj"
             }
           }
         }
@@ -8522,6 +8525,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -8565,8 +8573,16 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.100/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1803",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "You are running the 'restore' operation with an 'HTTP' source, 'http://nuget.cigamgestor.com.br/Gestor.Api.Nuget/nuget'. Non-HTTPS access will be removed in a future version. Consider migrating to an 'HTTPS' source."
+    }
+  ]
 }

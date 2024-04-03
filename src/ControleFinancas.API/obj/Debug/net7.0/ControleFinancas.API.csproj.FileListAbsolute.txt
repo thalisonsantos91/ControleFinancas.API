@@ -58,3 +58,14 @@
 /Users/thalisonsantos/Documents/Projetos/ControleFinancas.API/ControleFinancas.API/src/ControleFinancas.API/obj/Debug/net7.0/ControleFinancas.API.pdb
 /Users/thalisonsantos/Documents/Projetos/ControleFinancas.API/ControleFinancas.API/src/ControleFinancas.API/obj/Debug/net7.0/ControleFinancas.API.genruntimeconfig.cache
 /Users/thalisonsantos/Documents/Projetos/ControleFinancas.API/ControleFinancas.API/src/ControleFinancas.API/obj/Debug/net7.0/ref/ControleFinancas.API.dll
+C:\Users\thali\OneDrive\Desktop\Documentos\Projetos\ControleFinancas.API\ControleFinancas.API\src\ControleFinancas.API\obj\Debug\net7.0\ControleFinancas.API.csproj.AssemblyReference.cache
+C:\Users\thali\OneDrive\Desktop\Documentos\Projetos\ControleFinancas.API\ControleFinancas.API\src\ControleFinancas.API\obj\Debug\net7.0\ControleFinancas.API.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\thali\OneDrive\Desktop\Documentos\Projetos\ControleFinancas.API\ControleFinancas.API\src\ControleFinancas.API\obj\Debug\net7.0\ControleFinancas.API.AssemblyInfoInputs.cache
+C:\Users\thali\OneDrive\Desktop\Documentos\Projetos\ControleFinancas.API\ControleFinancas.API\src\ControleFinancas.API\obj\Debug\net7.0\ControleFinancas.API.AssemblyInfo.cs
+C:\Users\thali\OneDrive\Desktop\Documentos\Projetos\ControleFinancas.API\ControleFinancas.API\src\ControleFinancas.API\obj\Debug\net7.0\ControleFinancas.API.csproj.CoreCompileInputs.cache
+C:\Users\thali\OneDrive\Desktop\Documentos\Projetos\ControleFinancas.API\ControleFinancas.API\src\ControleFinancas.API\obj\Debug\net7.0\ControleFinancas.API.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\thali\OneDrive\Desktop\Documentos\Projetos\ControleFinancas.API\ControleFinancas.API\src\ControleFinancas.API\obj\Debug\net7.0\ControleFinancas.API.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\thali\OneDrive\Desktop\Documentos\Projetos\ControleFinancas.API\ControleFinancas.API\src\ControleFinancas.API\obj\Debug\net7.0\ControleFinancas.API.sourcelink.json
+C:\Users\thali\OneDrive\Desktop\Documentos\Projetos\ControleFinancas.API\ControleFinancas.API\src\ControleFinancas.API\obj\Debug\net7.0\ControleFinancas.API.dll
+C:\Users\thali\OneDrive\Desktop\Documentos\Projetos\ControleFinancas.API\ControleFinancas.API\src\ControleFinancas.API\obj\Debug\net7.0\refint\ControleFinancas.API.dll
+C:\Users\thali\OneDrive\Desktop\Documentos\Projetos\ControleFinancas.API\ControleFinancas.API\src\ControleFinancas.API\obj\Debug\net7.0\ControleFinancas.API.pdb
