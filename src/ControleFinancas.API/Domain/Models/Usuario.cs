@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
-using ControleFinancas.API.Contract.Usuario;
 
 namespace ControleFinancas.API.Damain.Models
 {
