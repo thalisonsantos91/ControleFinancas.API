@@ -7,6 +7,15 @@ using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
+
+// Add services to the container.
+string mySqlConnection =
+              builder.Configuration.GetConnectionString("PADRAO");
+
+builder.Services.AddDbContextPool<ApplicationContext>(options =>
+                options.UseMySql(mySqlConnection,
+                      ServerVersion.AutoDetect(mySqlConnection)));
+                      
 ConfigurarServices(builder);
 
 ConfigurarInjecaoDeDependencia(builder);
@@ -20,10 +29,6 @@ app.Run();
 // Metodo que configrua as injeções de dependencia do projeto.
 static void ConfigurarInjecaoDeDependencia(WebApplicationBuilder builder)
 {
-    string? connectionString = builder.Configuration.GetConnectionString("PADRAO");
-    builder.Services.AddDbContext<ApplicationContext>(options =>
-    options.UseNpgsql(connectionString), ServiceLifetime.Transient, ServiceLifetime.Transient);
-
     builder.Services
     .AddSingleton(builder.Configuration)
     .AddSingleton(builder.Environment);

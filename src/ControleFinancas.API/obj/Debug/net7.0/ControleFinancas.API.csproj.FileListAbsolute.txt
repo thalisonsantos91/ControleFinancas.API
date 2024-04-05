@@ -118,3 +118,5 @@ C:\Users\thali\OneDrive\Desktop\Documentos\Projetos\ControleFinancas.API\Control
 C:\Users\thali\OneDrive\Desktop\Documentos\Projetos\ControleFinancas.API\ControleFinancas.API\src\ControleFinancas.API\obj\Debug\net7.0\Controle.90D3A565.Up2Date
 C:\Users\thali\OneDrive\Desktop\Documentos\Projetos\ControleFinancas.API\ControleFinancas.API\src\ControleFinancas.API\obj\Debug\net7.0\ControleFinancas.API.genruntimeconfig.cache
 C:\Users\thali\OneDrive\Desktop\Documentos\Projetos\ControleFinancas.API\ControleFinancas.API\src\ControleFinancas.API\obj\Debug\net7.0\ref\ControleFinancas.API.dll
+C:\Users\thali\OneDrive\Desktop\Documentos\Projetos\ControleFinancas.API\ControleFinancas.API\src\ControleFinancas.API\bin\Debug\net7.0\MySqlConnector.dll
+C:\Users\thali\OneDrive\Desktop\Documentos\Projetos\ControleFinancas.API\ControleFinancas.API\src\ControleFinancas.API\bin\Debug\net7.0\Pomelo.EntityFrameworkCore.MySql.dll

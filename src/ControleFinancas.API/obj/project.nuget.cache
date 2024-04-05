@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "+xuDGche+3tj5qKYWcMo+6yuvto9zHFbQ2F6c8mt6DWm5ZZbz+sVYftcDCFbYcHE26k3yRplFuZWurDcblKHAw==",
+  "dgSpecHash": "AgGQdgXaVWjlw0nXLpAZRKOSAvqAmTVjFv1gESDnSq2znyh4CpEPGnCmx/y4VE78IlJW6ZWzayjtmCd8islH+Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\thali\\OneDrive\\Desktop\\Documentos\\Projetos\\ControleFinancas.API\\ControleFinancas.API\\src\\ControleFinancas.API\\ControleFinancas.API.csproj",
   "expectedPackageFiles": [
@@ -58,10 +58,12 @@
     "C:\\Users\\thali\\.nuget\\packages\\microsoft.openapi\\1.4.3\\microsoft.openapi.1.4.3.nupkg.sha512",
     "C:\\Users\\thali\\.nuget\\packages\\microsoft.win32.registry\\4.5.0\\microsoft.win32.registry.4.5.0.nupkg.sha512",
     "C:\\Users\\thali\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
+    "C:\\Users\\thali\\.nuget\\packages\\mysqlconnector\\2.2.5\\mysqlconnector.2.2.5.nupkg.sha512",
     "C:\\Users\\thali\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\thali\\.nuget\\packages\\newtonsoft.json.bson\\1.0.2\\newtonsoft.json.bson.1.0.2.nupkg.sha512",
     "C:\\Users\\thali\\.nuget\\packages\\npgsql\\7.0.4\\npgsql.7.0.4.nupkg.sha512",
     "C:\\Users\\thali\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\7.0.4\\npgsql.entityframeworkcore.postgresql.7.0.4.nupkg.sha512",
+    "C:\\Users\\thali\\.nuget\\packages\\pomelo.entityframeworkcore.mysql\\7.0.0\\pomelo.entityframeworkcore.mysql.7.0.0.nupkg.sha512",
     "C:\\Users\\thali\\.nuget\\packages\\swashbuckle.aspnetcore\\6.5.0\\swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
     "C:\\Users\\thali\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.5.0\\swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
     "C:\\Users\\thali\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.5.0\\swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",
