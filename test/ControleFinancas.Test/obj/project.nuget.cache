@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "zt9oqC47TUiqIIITgSxT6omat/fBWpdfSrGS33dUrG4VGXEbMzH+5OY/5dIwKik+zYhcdMWuZ//Jn+W+fvBwsA==",
+  "dgSpecHash": "XsnUsNKvjD35aX2wB9nPCR/Q+LNmx7EqXevAa2mIlrYSz1iWa7CoCAVpkUTbZ2X7uEi6Is8FcW71481b7URhgg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\thali\\OneDrive\\Desktop\\Documentos\\Projetos\\ControleFinancas.API\\ControleFinancas.API\\test\\ControleFinancas.Test\\ControleFinancas.Test.csproj",
+  "projectFilePath": "C:\\Users\\thali\\OneDrive\\Desktop\\Doc. Thalison\\Projetos\\ControleFinancas.API\\ControleFinancas.API\\test\\ControleFinancas.Test\\ControleFinancas.Test.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\thali\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\thali\\.nuget\\packages\\coverlet.collector\\6.0.0\\coverlet.collector.6.0.0.nupkg.sha512",

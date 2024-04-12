@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ControleFinancas.Test
-build_property.ProjectDir = C:\Users\thali\OneDrive\Desktop\Documentos\Projetos\ControleFinancas.API\ControleFinancas.API\test\ControleFinancas.Test\
+build_property.ProjectDir = C:\Users\thali\OneDrive\Desktop\Doc. Thalison\Projetos\ControleFinancas.API\ControleFinancas.API\test\ControleFinancas.Test\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

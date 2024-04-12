@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "AgGQdgXaVWjlw0nXLpAZRKOSAvqAmTVjFv1gESDnSq2znyh4CpEPGnCmx/y4VE78IlJW6ZWzayjtmCd8islH+Q==",
+  "dgSpecHash": "ARftuXBWzBNlh/whz8EumqDAKd1LPfMmUbl2XeO1+NPisXz1h64/eAQmBGRiX/DLKZ5kNYvdTh1YyC3E0xRzOQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\thali\\OneDrive\\Desktop\\Documentos\\Projetos\\ControleFinancas.API\\ControleFinancas.API\\src\\ControleFinancas.API\\ControleFinancas.API.csproj",
+  "projectFilePath": "C:\\Users\\thali\\OneDrive\\Desktop\\Doc. Thalison\\Projetos\\ControleFinancas.API\\ControleFinancas.API\\src\\ControleFinancas.API\\ControleFinancas.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\thali\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\thali\\.nuget\\packages\\fluentvalidation\\10.4.0\\fluentvalidation.10.4.0.nupkg.sha512",
@@ -78,7 +78,11 @@
     "C:\\Users\\thali\\.nuget\\packages\\system.security.permissions\\4.5.0\\system.security.permissions.4.5.0.nupkg.sha512",
     "C:\\Users\\thali\\.nuget\\packages\\system.security.principal.windows\\4.5.0\\system.security.principal.windows.4.5.0.nupkg.sha512",
     "C:\\Users\\thali\\.nuget\\packages\\system.text.encodings.web\\7.0.0\\system.text.encodings.web.7.0.0.nupkg.sha512",
-    "C:\\Users\\thali\\.nuget\\packages\\system.text.json\\7.0.0\\system.text.json.7.0.0.nupkg.sha512"
+    "C:\\Users\\thali\\.nuget\\packages\\system.text.json\\7.0.0\\system.text.json.7.0.0.nupkg.sha512",
+    "C:\\Users\\thali\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.17\\microsoft.netcore.app.ref.7.0.17.nupkg.sha512",
+    "C:\\Users\\thali\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.17\\microsoft.windowsdesktop.app.ref.7.0.17.nupkg.sha512",
+    "C:\\Users\\thali\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.17\\microsoft.aspnetcore.app.ref.7.0.17.nupkg.sha512",
+    "C:\\Users\\thali\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\7.0.17\\microsoft.netcore.app.host.win-x64.7.0.17.nupkg.sha512"
   ],
   "logs": [
     {

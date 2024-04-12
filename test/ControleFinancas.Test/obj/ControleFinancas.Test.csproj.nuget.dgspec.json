@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\thali\\OneDrive\\Desktop\\Documentos\\Projetos\\ControleFinancas.API\\ControleFinancas.API\\test\\ControleFinancas.Test\\ControleFinancas.Test.csproj": {}
+    "C:\\Users\\thali\\OneDrive\\Desktop\\Doc. Thalison\\Projetos\\ControleFinancas.API\\ControleFinancas.API\\test\\ControleFinancas.Test\\ControleFinancas.Test.csproj": {}
   },
   "projects": {
-    "C:\\Users\\thali\\OneDrive\\Desktop\\Documentos\\Projetos\\ControleFinancas.API\\ControleFinancas.API\\src\\ControleFinancas.API\\ControleFinancas.API.csproj": {
+    "C:\\Users\\thali\\OneDrive\\Desktop\\Doc. Thalison\\Projetos\\ControleFinancas.API\\ControleFinancas.API\\src\\ControleFinancas.API\\ControleFinancas.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\thali\\OneDrive\\Desktop\\Documentos\\Projetos\\ControleFinancas.API\\ControleFinancas.API\\src\\ControleFinancas.API\\ControleFinancas.API.csproj",
+        "projectUniqueName": "C:\\Users\\thali\\OneDrive\\Desktop\\Doc. Thalison\\Projetos\\ControleFinancas.API\\ControleFinancas.API\\src\\ControleFinancas.API\\ControleFinancas.API.csproj",
         "projectName": "ControleFinancas.API",
-        "projectPath": "C:\\Users\\thali\\OneDrive\\Desktop\\Documentos\\Projetos\\ControleFinancas.API\\ControleFinancas.API\\src\\ControleFinancas.API\\ControleFinancas.API.csproj",
+        "projectPath": "C:\\Users\\thali\\OneDrive\\Desktop\\Doc. Thalison\\Projetos\\ControleFinancas.API\\ControleFinancas.API\\src\\ControleFinancas.API\\ControleFinancas.API.csproj",
         "packagesPath": "C:\\Users\\thali\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\thali\\OneDrive\\Desktop\\Documentos\\Projetos\\ControleFinancas.API\\ControleFinancas.API\\src\\ControleFinancas.API\\obj\\",
+        "outputPath": "C:\\Users\\thali\\OneDrive\\Desktop\\Doc. Thalison\\Projetos\\ControleFinancas.API\\ControleFinancas.API\\src\\ControleFinancas.API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\thali\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -106,6 +106,24 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[7.0.17, 7.0.17]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[7.0.17, 7.0.17]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[7.0.17, 7.0.17]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[7.0.17, 7.0.17]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -118,14 +136,14 @@
         }
       }
     },
-    "C:\\Users\\thali\\OneDrive\\Desktop\\Documentos\\Projetos\\ControleFinancas.API\\ControleFinancas.API\\test\\ControleFinancas.Test\\ControleFinancas.Test.csproj": {
+    "C:\\Users\\thali\\OneDrive\\Desktop\\Doc. Thalison\\Projetos\\ControleFinancas.API\\ControleFinancas.API\\test\\ControleFinancas.Test\\ControleFinancas.Test.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\thali\\OneDrive\\Desktop\\Documentos\\Projetos\\ControleFinancas.API\\ControleFinancas.API\\test\\ControleFinancas.Test\\ControleFinancas.Test.csproj",
+        "projectUniqueName": "C:\\Users\\thali\\OneDrive\\Desktop\\Doc. Thalison\\Projetos\\ControleFinancas.API\\ControleFinancas.API\\test\\ControleFinancas.Test\\ControleFinancas.Test.csproj",
         "projectName": "ControleFinancas.Test",
-        "projectPath": "C:\\Users\\thali\\OneDrive\\Desktop\\Documentos\\Projetos\\ControleFinancas.API\\ControleFinancas.API\\test\\ControleFinancas.Test\\ControleFinancas.Test.csproj",
+        "projectPath": "C:\\Users\\thali\\OneDrive\\Desktop\\Doc. Thalison\\Projetos\\ControleFinancas.API\\ControleFinancas.API\\test\\ControleFinancas.Test\\ControleFinancas.Test.csproj",
         "packagesPath": "C:\\Users\\thali\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\thali\\OneDrive\\Desktop\\Documentos\\Projetos\\ControleFinancas.API\\ControleFinancas.API\\test\\ControleFinancas.Test\\obj\\",
+        "outputPath": "C:\\Users\\thali\\OneDrive\\Desktop\\Doc. Thalison\\Projetos\\ControleFinancas.API\\ControleFinancas.API\\test\\ControleFinancas.Test\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\thali\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -143,8 +161,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\thali\\OneDrive\\Desktop\\Documentos\\Projetos\\ControleFinancas.API\\ControleFinancas.API\\src\\ControleFinancas.API\\ControleFinancas.API.csproj": {
-                "projectPath": "C:\\Users\\thali\\OneDrive\\Desktop\\Documentos\\Projetos\\ControleFinancas.API\\ControleFinancas.API\\src\\ControleFinancas.API\\ControleFinancas.API.csproj"
+              "C:\\Users\\thali\\OneDrive\\Desktop\\Doc. Thalison\\Projetos\\ControleFinancas.API\\ControleFinancas.API\\src\\ControleFinancas.API\\ControleFinancas.API.csproj": {
+                "projectPath": "C:\\Users\\thali\\OneDrive\\Desktop\\Doc. Thalison\\Projetos\\ControleFinancas.API\\ControleFinancas.API\\src\\ControleFinancas.API\\ControleFinancas.API.csproj"
               }
             }
           }

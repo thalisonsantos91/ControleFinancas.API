@@ -3194,11 +3194,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\thali\\OneDrive\\Desktop\\Documentos\\Projetos\\ControleFinancas.API\\ControleFinancas.API\\src\\ControleFinancas.API\\ControleFinancas.API.csproj",
+      "projectUniqueName": "C:\\Users\\thali\\OneDrive\\Desktop\\Doc. Thalison\\Projetos\\ControleFinancas.API\\ControleFinancas.API\\src\\ControleFinancas.API\\ControleFinancas.API.csproj",
       "projectName": "ControleFinancas.API",
-      "projectPath": "C:\\Users\\thali\\OneDrive\\Desktop\\Documentos\\Projetos\\ControleFinancas.API\\ControleFinancas.API\\src\\ControleFinancas.API\\ControleFinancas.API.csproj",
+      "projectPath": "C:\\Users\\thali\\OneDrive\\Desktop\\Doc. Thalison\\Projetos\\ControleFinancas.API\\ControleFinancas.API\\src\\ControleFinancas.API\\ControleFinancas.API.csproj",
       "packagesPath": "C:\\Users\\thali\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\thali\\OneDrive\\Desktop\\Documentos\\Projetos\\ControleFinancas.API\\ControleFinancas.API\\src\\ControleFinancas.API\\obj\\",
+      "outputPath": "C:\\Users\\thali\\OneDrive\\Desktop\\Doc. Thalison\\Projetos\\ControleFinancas.API\\ControleFinancas.API\\src\\ControleFinancas.API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\thali\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3293,6 +3293,24 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[7.0.17, 7.0.17]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[7.0.17, 7.0.17]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[7.0.17, 7.0.17]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[7.0.17, 7.0.17]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
