@@ -1,49 +1,117 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Intrinsics.Arm;
+using System.Security.Authentication;
+using System.Security.Cryptography;
+using System.Text;
 using System.Threading.Tasks;
-using ControleFinancas.API.Domain.Repository.Interfaces;
+using AutoMapper;
+using ControleFinancas.API.DTO.Usuario;
+using ControleFinancas.API.Damain.Models;
 using ControleFinancas.API.Domain.Services.Interfaces;
-using ControleFinancas.API.DTO.Usuário;
+using ControleFinancas.API.Domain.Repository.Interfaces;
+using ControleFacil.Api.Exceptions;
 
-namespace ControleFinancas.API.Domain.Services.Classes
+namespace ControleFinancas.API.Damain.Services.Classes
 {
     public class UsuarioService : IUsuarioService
     {
         private readonly IUsuarioRepository _usuarioRepository;
+        private readonly IMapper _mapper;
 
-        public UsuarioService(IUsuarioRepository usuarioRepository)
+        // private readonly TokenService _tokenService;
+
+        public UsuarioService(
+            IUsuarioRepository usuarioRepository,
+            IMapper mapper
+            )
         {
             _usuarioRepository = usuarioRepository;
-        }
-        public Task<UsuarioLoginResponseContract> Adicionar(UsuarioLoginRequestContract entidade, long usuario)
-        {
-            throw new NotImplementedException();
+            _mapper = mapper;
         }
 
-        public Task<UsuarioLoginResponseContract> Atualizar(UsuarioLoginRequestContract entidade, long id, long usuario)
+        public async Task<UsuarioLoginResponseContract> Autenticar(UsuarioLoginRequestContract usuarioLoginRequest)
         {
-            throw new NotImplementedException();
+            UsuarioResponseContract usuario = await Obter(usuarioLoginRequest.Email);
+        
+            var hashSenha = GerarHashSenha(usuarioLoginRequest.Senha);
+
+            if(usuario is null || usuario.Senha != hashSenha)
+            {
+                throw new AuthenticationException("Usuário ou senha inválida.");
+            }
+
+            return new UsuarioLoginResponseContract {
+                Id = usuario.Id,
+                Email = usuario.Email,
+                Token = _tokenService.GerarToken(_mapper.Map<Usuario>(usuario))
+            };        
+        }
+        public async Task<UsuarioResponseContract> Adicionar(UsuarioRequestContract entidade, long idUsuario)
+        {
+            var usuario = _mapper.Map<Usuario>(entidade);
+
+            usuario.Senha = GerarHashSenha(usuario.Senha);
+            usuario.DataCadastro = DateTime.Now;
+
+            usuario = await _usuarioRepository.Adicionar(usuario);
+
+            return _mapper.Map<UsuarioResponseContract>(usuario);
         }
 
-        public Task<UsuarioLoginResponseContract> Autenticar(UsuarioLoginRequestContract usuarioLoginRequest)
+        public async Task<UsuarioResponseContract> Atualizar(long id, UsuarioRequestContract entidade, long idUsuario)
         {
-            throw new NotImplementedException();
+            _ = await Obter(id) ?? throw new NotFoundException("Usuario não encontrado para atualização.");
+
+            var usuario = _mapper.Map<Usuario>(entidade);
+            usuario.Id = id;
+            usuario.Senha = GerarHashSenha(entidade.Senha);
+
+            usuario = await _usuarioRepository.Atualizar(usuario);
+
+            return _mapper.Map<UsuarioResponseContract>(usuario);
         }
 
-        public Task Inativar(long id, long usuario)
+        public async Task Inativar(long id, long idUsuario)
         {
-            throw new NotImplementedException();
+            var usuario = await _usuarioRepository.Obter(id) ?? throw new NotFoundException("Usuario não encontrado para inativação.");
+            
+            await _usuarioRepository.Deletar(_mapper.Map<Usuario>(usuario));
         }
 
-        public Task<IEnumerable<UsuarioLoginResponseContract>> Obter(long usuario)
+        public async Task<IEnumerable<UsuarioResponseContract>> Obter(long idUsuario)
         {
-            throw new NotImplementedException();
+            var usuarios = await _usuarioRepository.Obter();
+
+            return usuarios.Select(usuario => _mapper.Map<UsuarioResponseContract>(usuario));
         }
 
-        public Task<UsuarioLoginResponseContract> Obter(long id, long usuario)
+        public async Task<UsuarioResponseContract> Obter(long id, long idUsuario)
         {
-            throw new NotImplementedException();
+            var usuario = await _usuarioRepository.Obter(id);
+            return _mapper.Map<UsuarioResponseContract>(usuario);
         }
+
+        public async Task<UsuarioResponseContract> Obter(string email)
+        {
+            var usuario = await _usuarioRepository.Obter(email);
+            return _mapper.Map<UsuarioResponseContract>(usuario);
+        }
+
+        private string GerarHashSenha(string senha)
+        {
+            string hashSenha;
+
+            using(SHA256 sha256 = SHA256.Create())
+            {
+                byte[] bytesSenha = Encoding.UTF8.GetBytes(senha);
+                byte[] bytesHashSenha = sha256.ComputeHash(bytesSenha);
+                hashSenha = BitConverter.ToString(bytesHashSenha).Replace("-","").Replace("-","").ToLower();
+            }
+            
+            return hashSenha;
+        }
+        
     }
 }

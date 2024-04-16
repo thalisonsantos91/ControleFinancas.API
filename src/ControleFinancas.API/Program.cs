@@ -1,4 +1,6 @@
 using System.Text;
+using AutoMapper;
+using ControleFinancas.API.AutoMapper;
 using ControleFinancas.API.Data;
 using ControleFinancas.API.Domain.Repository.Classes;
 using ControleFinancas.API.Domain.Repository.Interfaces;
@@ -31,9 +33,18 @@ app.Run();
 // Metodo que configrua as injeções de dependencia do projeto.
 static void ConfigurarInjecaoDeDependencia(WebApplicationBuilder builder)
 {
+    var config = new MapperConfiguration(cfg =>{
+
+        cfg.AddProfile<UsuarioProfile>();
+    });
+
+    IMapper mapper= config.CreateMapper();
+
+
     builder.Services
     .AddSingleton(builder.Configuration)
     .AddSingleton(builder.Environment)
+    .AddSingleton(mapper)
     .AddScoped<IUsuarioRepository, UsuarioRepository>();
 
 }

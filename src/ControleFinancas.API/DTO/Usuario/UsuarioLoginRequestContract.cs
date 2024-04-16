@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ControleFinancas.API.DTO.Usuário
+namespace ControleFinancas.API.DTO.Usuario
 {
     public class UsuarioLoginRequestContract
     {
