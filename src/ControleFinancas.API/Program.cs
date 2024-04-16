@@ -1,5 +1,7 @@
 using System.Text;
 using ControleFinancas.API.Data;
+using ControleFinancas.API.Domain.Repository.Classes;
+using ControleFinancas.API.Domain.Repository.Interfaces;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -31,7 +33,9 @@ static void ConfigurarInjecaoDeDependencia(WebApplicationBuilder builder)
 {
     builder.Services
     .AddSingleton(builder.Configuration)
-    .AddSingleton(builder.Environment);
+    .AddSingleton(builder.Environment)
+    .AddScoped<IUsuarioRepository, UsuarioRepository>();
+
 }
 
 // Configura o serviços da API.

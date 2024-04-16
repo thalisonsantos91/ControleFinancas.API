@@ -39,7 +39,7 @@ namespace ControleFinancas.API.Domain.Repository.Classes
                 return entidade;
             }
 
-           return null;
+           return entidade;
         }
 
         public Task Deletar(Usuario entidade)
