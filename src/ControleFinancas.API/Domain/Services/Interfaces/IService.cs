@@ -20,7 +20,7 @@ namespace ControleFinancas.API.Domain.Services.Interfaces
     {
         Task<IEnumerable<RS>> Obter(I usuario);
         Task<RS> Obter(I id, I usuario);
-        Task<RS> Adicionar(RQ entidade, I usuario);
+        Task<RS> Adicionar(RQ entidade, I IdUsuario);
         Task<RS> Atualizar(RQ entidade, I id, I usuario);
         Task Inativar(I id, I usuario);
     }

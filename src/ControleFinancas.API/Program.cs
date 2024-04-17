@@ -40,7 +40,6 @@ static void ConfigurarInjecaoDeDependencia(WebApplicationBuilder builder)
 
     IMapper mapper= config.CreateMapper();
 
-
     builder.Services
     .AddSingleton(builder.Configuration)
     .AddSingleton(builder.Environment)

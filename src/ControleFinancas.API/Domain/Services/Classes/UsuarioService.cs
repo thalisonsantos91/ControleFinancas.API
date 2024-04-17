@@ -11,7 +11,6 @@ using ControleFinancas.API.DTO.Usuario;
 using ControleFinancas.API.Damain.Models;
 using ControleFinancas.API.Domain.Services.Interfaces;
 using ControleFinancas.API.Domain.Repository.Interfaces;
-using ControleFacil.Api.Exceptions;
 
 namespace ControleFinancas.API.Damain.Services.Classes
 {
@@ -31,87 +30,50 @@ namespace ControleFinancas.API.Damain.Services.Classes
             _mapper = mapper;
         }
 
-        public async Task<UsuarioLoginResponseContract> Autenticar(UsuarioLoginRequestContract usuarioLoginRequest)
-        {
-            UsuarioResponseContract usuario = await Obter(usuarioLoginRequest.Email);
-        
-            var hashSenha = GerarHashSenha(usuarioLoginRequest.Senha);
-
-            if(usuario is null || usuario.Senha != hashSenha)
-            {
-                throw new AuthenticationException("Usuário ou senha inválida.");
-            }
-
-            return new UsuarioLoginResponseContract {
-                Id = usuario.Id,
-                Email = usuario.Email,
-                Token = _tokenService.GerarToken(_mapper.Map<Usuario>(usuario))
-            };        
-        }
-        public async Task<UsuarioResponseContract> Adicionar(UsuarioRequestContract entidade, long idUsuario)
+        public async Task<UsuarioResponseContract> Adicionar(UsuarioRequestContract entidade, long IdUsuario)
         {
             var usuario = _mapper.Map<Usuario>(entidade);
-
             usuario.Senha = GerarHashSenha(usuario.Senha);
-            usuario.DataCadastro = DateTime.Now;
-
-            usuario = await _usuarioRepository.Adicionar(usuario);
-
-            return _mapper.Map<UsuarioResponseContract>(usuario);
-        }
-
-        public async Task<UsuarioResponseContract> Atualizar(long id, UsuarioRequestContract entidade, long idUsuario)
-        {
-            _ = await Obter(id) ?? throw new NotFoundException("Usuario não encontrado para atualização.");
-
-            var usuario = _mapper.Map<Usuario>(entidade);
-            usuario.Id = id;
-            usuario.Senha = GerarHashSenha(entidade.Senha);
-
-            usuario = await _usuarioRepository.Atualizar(usuario);
-
-            return _mapper.Map<UsuarioResponseContract>(usuario);
-        }
-
-        public async Task Inativar(long id, long idUsuario)
-        {
-            var usuario = await _usuarioRepository.Obter(id) ?? throw new NotFoundException("Usuario não encontrado para inativação.");
-            
-            await _usuarioRepository.Deletar(_mapper.Map<Usuario>(usuario));
-        }
-
-        public async Task<IEnumerable<UsuarioResponseContract>> Obter(long idUsuario)
-        {
-            var usuarios = await _usuarioRepository.Obter();
-
-            return usuarios.Select(usuario => _mapper.Map<UsuarioResponseContract>(usuario));
-        }
-
-        public async Task<UsuarioResponseContract> Obter(long id, long idUsuario)
-        {
-            var usuario = await _usuarioRepository.Obter(id);
-            return _mapper.Map<UsuarioResponseContract>(usuario);
-        }
-
-        public async Task<UsuarioResponseContract> Obter(string email)
-        {
-            var usuario = await _usuarioRepository.Obter(email);
+            usuario = await _usuarioRepository.Adicionar(usuario);            
             return _mapper.Map<UsuarioResponseContract>(usuario);
         }
 
         private string GerarHashSenha(string senha)
         {
-            string hashSenha;
+            string hashSenha =string.Empty; 
 
             using(SHA256 sha256 = SHA256.Create())
             {
                 byte[] bytesSenha = Encoding.UTF8.GetBytes(senha);
-                byte[] bytesHashSenha = sha256.ComputeHash(bytesSenha);
-                hashSenha = BitConverter.ToString(bytesHashSenha).Replace("-","").Replace("-","").ToLower();
+                byte[] bytesHashSenha = sha256.ComputeHash(bytesSenha);   
+                hashSenha  =  BitConverter.ToString(bytesHashSenha).ToLower();         
             }
-            
             return hashSenha;
         }
-        
+
+        public Task<UsuarioResponseContract> Atualizar(UsuarioRequestContract entidade, long id, long usuario)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<UsuarioLoginResponseContract> Autenticar(UsuarioLoginRequestContract usuarioLoginRequest)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task Inativar(long id, long usuario)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IEnumerable<UsuarioResponseContract>> Obter(long usuario)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<UsuarioResponseContract> Obter(long id, long usuario)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
