@@ -30,27 +30,34 @@ namespace ControleFinancas.API.Damain.Services.Classes
             _mapper = mapper;
         }
 
+         public Task<UsuarioLoginResponseContract> Autenticar(UsuarioLoginRequestContract usuarioLoginRequest)
+        {
+            throw new NotImplementedException();
+        }
+        
         public async Task<UsuarioResponseContract> Adicionar(UsuarioRequestContract entidade, long IdUsuario)
         {
             var usuario = _mapper.Map<Usuario>(entidade);
             usuario.Senha = GerarHashSenha(usuario.Senha);
             usuario = await _usuarioRepository.Adicionar(usuario);            
             return _mapper.Map<UsuarioResponseContract>(usuario);
-        }        
+        }      
 
-        public Task<UsuarioResponseContract> Atualizar(UsuarioRequestContract entidade, long id, long idUsuario)
+        public async Task<UsuarioResponseContract> Atualizar(UsuarioRequestContract entidade, long id, long idUsuario)
         {
-            throw new NotImplementedException();
-        }
+            var validandoId = await Obter(id) ?? throw new Exception("Usuário não encontrado para Atualização.");
+            var usuario = _mapper.Map<Usuario>(entidade);
+            usuario.Id = id;
+            usuario.Senha = GerarHashSenha(entidade.Senha);
 
-        public Task<UsuarioLoginResponseContract> Autenticar(UsuarioLoginRequestContract usuarioLoginRequest)
-        {
-            throw new NotImplementedException();
+            usuario =   await _usuarioRepository.Atualizar(usuario);
+            return _mapper.Map<UsuarioResponseContract>(usuario);
         }
 
         public async Task Inativar(long id, long idUsuario)
         {
-            var usuario = await _usuarioRepository.Obter(id);
+            var usuario = await Obter(id) ?? throw new Exception("Usuário não encontrado para Inativação.");
+            await _usuarioRepository.Deletar(_mapper.Map<Usuario>(usuario));
         }
 
         public async Task<IEnumerable<UsuarioResponseContract>> Obter(long idUsuario)
