@@ -18,10 +18,10 @@ namespace ControleFinancas.API.Domain.Services.Interfaces
     /// <typeparam name="I"></typeparam>
     public interface IService<RQ, RS, I> where RQ : class
     {
-        Task<IEnumerable<RS>> Obter(I usuario);
-        Task<RS> Obter(I id, I usuario);
+        Task<IEnumerable<RS>> Obter(I idUsuario);
+        Task<RS> Obter(I id, I idUsuario);
         Task<RS> Adicionar(RQ entidade, I IdUsuario);
-        Task<RS> Atualizar(RQ entidade, I id, I usuario);
-        Task Inativar(I id, I usuario);
+        Task<RS> Atualizar(RQ entidade, I id, I idUsuario);
+        Task Inativar(I id, I idUsuario);
     }
 }

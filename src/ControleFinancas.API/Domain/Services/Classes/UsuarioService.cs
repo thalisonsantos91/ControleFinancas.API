@@ -36,6 +36,39 @@ namespace ControleFinancas.API.Damain.Services.Classes
             usuario.Senha = GerarHashSenha(usuario.Senha);
             usuario = await _usuarioRepository.Adicionar(usuario);            
             return _mapper.Map<UsuarioResponseContract>(usuario);
+        }        
+
+        public Task<UsuarioResponseContract> Atualizar(UsuarioRequestContract entidade, long id, long idUsuario)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<UsuarioLoginResponseContract> Autenticar(UsuarioLoginRequestContract usuarioLoginRequest)
+        {
+            throw new NotImplementedException();
+        }
+
+        public async Task Inativar(long id, long idUsuario)
+        {
+            var usuario = await _usuarioRepository.Obter(id);
+        }
+
+        public async Task<IEnumerable<UsuarioResponseContract>> Obter(long idUsuario)
+        {
+           return await Obter(idUsuario);
+        }
+
+        public async Task<UsuarioResponseContract> Obter(long id, long idUsuario)
+        {
+            var usuario = await _usuarioRepository.Obter(id);
+            return _mapper.Map<UsuarioResponseContract>(usuario);
+        }
+
+        public async Task<UsuarioResponseContract> Obter(string email)
+        {
+           var usuario = await _usuarioRepository.Obter(email);
+
+           return _mapper.Map<UsuarioResponseContract>(usuario);
         }
 
         private string GerarHashSenha(string senha)
@@ -49,31 +82,6 @@ namespace ControleFinancas.API.Damain.Services.Classes
                 hashSenha  =  BitConverter.ToString(bytesHashSenha).ToLower();         
             }
             return hashSenha;
-        }
-
-        public Task<UsuarioResponseContract> Atualizar(UsuarioRequestContract entidade, long id, long usuario)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<UsuarioLoginResponseContract> Autenticar(UsuarioLoginRequestContract usuarioLoginRequest)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task Inativar(long id, long usuario)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<IEnumerable<UsuarioResponseContract>> Obter(long usuario)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<UsuarioResponseContract> Obter(long id, long usuario)
-        {
-            throw new NotImplementedException();
         }
     }
 }
