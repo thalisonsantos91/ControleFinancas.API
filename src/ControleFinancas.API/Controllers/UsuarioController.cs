@@ -53,7 +53,7 @@ namespace ControleFinancas.API.Controllers
     [HttpGet]
     [Route("{id}")]
     [AllowAnonymous]
-    public async Task<IActionResult> Obter(long id)
+    public async Task<IActionResult> Obter(int id)
     {
         try
         {
@@ -68,7 +68,7 @@ namespace ControleFinancas.API.Controllers
     [HttpDelete]
     [Route("{id}")]
     [AllowAnonymous]
-    public async Task<IActionResult> Deletar(long id)
+    public async Task<IActionResult> Deletar(int id)
     {
         try
         {
@@ -84,7 +84,7 @@ namespace ControleFinancas.API.Controllers
     [HttpPut]
     [Route("{id}")]
     [AllowAnonymous]
-    public async Task<IActionResult> Atualizar(long id, UsuarioRequestContract contrato)
+    public async Task<IActionResult> Atualizar(int id, UsuarioRequestContract contrato)
     {
         try
         {

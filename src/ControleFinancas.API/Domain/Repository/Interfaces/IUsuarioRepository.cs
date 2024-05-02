@@ -6,7 +6,7 @@ using ControleFinancas.API.Damain.Models;
 
 namespace ControleFinancas.API.Domain.Repository.Interfaces
 {
-    public interface IUsuarioRepository :IRepository<Usuario, long>
+    public interface IUsuarioRepository :IRepository<Usuario, int>
     {
         Task<Usuario> Obter(string email);
     }

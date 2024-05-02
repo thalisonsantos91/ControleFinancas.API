@@ -18,7 +18,7 @@ namespace ControleFinancas.API.Migrations
                 name: "usuario",
                 columns: table => new
                 {
-                    Id = table.Column<long>(type: "bigint", nullable: false)
+                    Id = table.Column<int>(type: "bigint", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     Email = table.Column<string>(type: "TEXT", nullable: false),                      
                     Senha = table.Column<string>(type: "TEXT", nullable: false),                        

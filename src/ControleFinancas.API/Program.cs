@@ -1,9 +1,11 @@
 using System.Text;
 using AutoMapper;
 using ControleFinancas.API.AutoMapper;
+using ControleFinancas.API.Damain.Services.Classes;
 using ControleFinancas.API.Data;
 using ControleFinancas.API.Domain.Repository.Classes;
 using ControleFinancas.API.Domain.Repository.Interfaces;
+using ControleFinancas.API.Domain.Services.Interfaces;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -44,7 +46,8 @@ static void ConfigurarInjecaoDeDependencia(WebApplicationBuilder builder)
     .AddSingleton(builder.Configuration)
     .AddSingleton(builder.Environment)
     .AddSingleton(mapper)
-    .AddScoped<IUsuarioRepository, UsuarioRepository>();
+    .AddScoped<IUsuarioRepository, UsuarioRepository>()
+    .AddScoped<IUsuarioService, UsuarioService>();
 
 }
 
@@ -91,20 +94,20 @@ static void ConfigurarServices(WebApplicationBuilder builder)
     {
         x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
         x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-    })
-
-    .AddJwtBearer(x =>
-    {
-        x.RequireHttpsMetadata = false;
-        x.SaveToken = true;
-        x.TokenValidationParameters = new TokenValidationParameters
-        {
-            ValidateIssuerSigningKey = true,
-            IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(builder.Configuration["KeySecret"])),
-            ValidateIssuer = false,
-            ValidateAudience = false
-        };
     });
+
+    // .AddJwtBearer(x =>
+    // {
+    //     x.RequireHttpsMetadata = false;
+    //     x.SaveToken = true;
+    //     x.TokenValidationParameters = new TokenValidationParameters
+    //     {
+    //         ValidateIssuerSigningKey = true,
+    //         IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(builder.Configuration["KeySecret"])),
+    //         ValidateIssuer = false,
+    //         ValidateAudience = false
+    //     };
+    // });
 }
 
 // Configura os serviços na aplicação.

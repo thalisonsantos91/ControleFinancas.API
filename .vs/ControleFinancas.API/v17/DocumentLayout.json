@@ -1,0 +1,60 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\thali\\OneDrive\\Desktop\\Doc. Thalison\\Projetos\\ControleFinancas.API\\ControleFinancas.API\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D96127B0-66D1-4780-93C2-2D9F6BA70ABE}|src\\ControleFinancas.API\\ControleFinancas.API.csproj|c:\\users\\thali\\onedrive\\desktop\\doc. thalison\\projetos\\controlefinancas.api\\controlefinancas.api\\src\\controlefinancas.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{D96127B0-66D1-4780-93C2-2D9F6BA70ABE}|src\\ControleFinancas.API\\ControleFinancas.API.csproj|solutionrelative:src\\controlefinancas.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D96127B0-66D1-4780-93C2-2D9F6BA70ABE}|src\\ControleFinancas.API\\ControleFinancas.API.csproj|c:\\users\\thali\\onedrive\\desktop\\doc. thalison\\projetos\\controlefinancas.api\\controlefinancas.api\\src\\controlefinancas.api\\domain\\services\\classes\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D96127B0-66D1-4780-93C2-2D9F6BA70ABE}|src\\ControleFinancas.API\\ControleFinancas.API.csproj|solutionrelative:src\\controlefinancas.api\\domain\\services\\classes\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\thali\\OneDrive\\Desktop\\Doc. Thalison\\Projetos\\ControleFinancas.API\\ControleFinancas.API\\src\\ControleFinancas.API\\appsettings.json",
+              "RelativeDocumentMoniker": "src\\ControleFinancas.API\\appsettings.json",
+              "ToolTip": "C:\\Users\\thali\\OneDrive\\Desktop\\Doc. Thalison\\Projetos\\ControleFinancas.API\\ControleFinancas.API\\src\\ControleFinancas.API\\appsettings.json",
+              "RelativeToolTip": "src\\ControleFinancas.API\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-04-23T19:24:30.303Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TokenService.cs",
+              "DocumentMoniker": "C:\\Users\\thali\\OneDrive\\Desktop\\Doc. Thalison\\Projetos\\ControleFinancas.API\\ControleFinancas.API\\src\\ControleFinancas.API\\Domain\\Services\\Classes\\TokenService.cs",
+              "RelativeDocumentMoniker": "src\\ControleFinancas.API\\Domain\\Services\\Classes\\TokenService.cs",
+              "ToolTip": "C:\\Users\\thali\\OneDrive\\Desktop\\Doc. Thalison\\Projetos\\ControleFinancas.API\\ControleFinancas.API\\src\\ControleFinancas.API\\Domain\\Services\\Classes\\TokenService.cs",
+              "RelativeToolTip": "src\\ControleFinancas.API\\Domain\\Services\\Classes\\TokenService.cs",
+              "ViewState": "AQIAABUAAAAAAAAAAAAYwCoAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-23T19:22:33.243Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -18,51 +18,84 @@ namespace ControleFinancas.API.Domain.Repository.Classes
         {
             _context = context;
         }
-        
+
         public async Task<Usuario> Adicionar(Usuario entidade)
         {
-            await  _context.Usuario.AddAsync(entidade);
-            await  _context.SaveChangesAsync();
+            try
+            {
+                await _context.Usuario.AddAsync(entidade);
+                await _context.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception($"Não é possível salvar esse Usuário, {ex}");
+            }
 
             return entidade;
         }
 
         public async Task<Usuario> Atualizar(Usuario entidade)
         {
-           var usuario = await _context.Usuario.FindAsync(entidade.Id);
-            
-            if(usuario != null)
+            var usuario = await _context.Usuario.FindAsync(entidade.Id);
+            try
             {
-                _context.Entry(usuario).CurrentValues.SetValues(entidade);
-                _context.Update<Usuario>(usuario);
-                await  _context.SaveChangesAsync();
-                return entidade;
+                if (usuario != null)
+                {
+                    _context.Entry(usuario).CurrentValues.SetValues(entidade);
+                    _context.Update<Usuario>(usuario);
+                    await _context.SaveChangesAsync();
+                    return entidade;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception($"Não é possível deleter esse Usuário, {ex}");
             }
 
-           return entidade;
+            return entidade;
         }
 
-        public Task Deletar(Usuario entidade)
+        public async Task Deletar(Usuario entidade)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var usuario = _context.Usuario.Find(entidade.Id);
+                if (usuario != null)
+                {
+                    _context.Usuario.Remove(usuario);
+                    await _context.SaveChangesAsync();
+                }
+                else
+                {
+                    throw new Exception($"Não foi possível encontrar esse usuário");
+                }
+                
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception($"Não é possível deleter esse Usuário, {ex}");
+            }
         }
 
         public async Task<Usuario> Obter(string email)
         {
             return await _context.Usuario
-                .FirstOrDefaultAsync(x => x.Email == email) 
+                .FirstOrDefaultAsync(x => x.Email == email)
                 ?? throw new Exception("Usuário não encontrado.");
         }
 
         public async Task<IEnumerable<Usuario>> Obter()
         {
-            return await _context.Usuario.OrderBy(x=>x.Id)
+            return await _context.Usuario.OrderBy(x => x.Id)
                                          .ToListAsync();
         }
 
-        public async Task<Usuario> Obter(long id)
+        public async Task<Usuario> Obter(int id)
         {
-            return await _context.Usuario.FindAsync(id) 
+            return await _context.Usuario.FindAsync(id)
                    ?? throw new Exception("Usuário não encontrado.");
         }
     }

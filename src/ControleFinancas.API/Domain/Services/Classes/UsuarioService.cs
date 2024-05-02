@@ -35,17 +35,18 @@ namespace ControleFinancas.API.Damain.Services.Classes
             throw new NotImplementedException();
         }
         
-        public async Task<UsuarioResponseContract> Adicionar(UsuarioRequestContract entidade, long IdUsuario)
+        public async Task<UsuarioResponseContract> Adicionar(UsuarioRequestContract entidade, int IdUsuario)
         {
             var usuario = _mapper.Map<Usuario>(entidade);
+            usuario.DataCadastro = DateTime.Now;
             usuario.Senha = GerarHashSenha(usuario.Senha);
             usuario = await _usuarioRepository.Adicionar(usuario);            
             return _mapper.Map<UsuarioResponseContract>(usuario);
         }      
 
-        public async Task<UsuarioResponseContract> Atualizar(UsuarioRequestContract entidade, long id, long idUsuario)
+        public async Task<UsuarioResponseContract> Atualizar(UsuarioRequestContract entidade, int id, int idUsuario)
         {
-            var validandoId = await Obter(id) ?? throw new Exception("Usuário não encontrado para Atualização.");
+            _ = await _usuarioRepository.Obter(id) ?? throw new Exception("Usuário não encontrado para Atualização.");
             var usuario = _mapper.Map<Usuario>(entidade);
             usuario.Id = id;
             usuario.Senha = GerarHashSenha(entidade.Senha);
@@ -54,18 +55,18 @@ namespace ControleFinancas.API.Damain.Services.Classes
             return _mapper.Map<UsuarioResponseContract>(usuario);
         }
 
-        public async Task Inativar(long id, long idUsuario)
+        public async Task Inativar(int id, int idUsuario)
         {
-            var usuario = await Obter(id) ?? throw new Exception("Usuário não encontrado para Inativação.");
+            var usuario = await Obter(id, idUsuario) ?? throw new Exception("Usuário não encontrado para Inativação.");
             await _usuarioRepository.Deletar(_mapper.Map<Usuario>(usuario));
         }
 
-        public async Task<IEnumerable<UsuarioResponseContract>> Obter(long idUsuario)
+        public async Task<IEnumerable<UsuarioResponseContract>> Obter(int idUsuario)
         {
-           return await Obter(idUsuario);
+           var usuarios = await _usuarioRepository.Obter();
+           return usuarios.Select(usuario => _mapper.Map<UsuarioResponseContract>(usuario));
         }
-
-        public async Task<UsuarioResponseContract> Obter(long id, long idUsuario)
+        public async Task<UsuarioResponseContract> Obter(int id, int idUsuario)
         {
             var usuario = await _usuarioRepository.Obter(id);
             return _mapper.Map<UsuarioResponseContract>(usuario);
@@ -86,7 +87,7 @@ namespace ControleFinancas.API.Damain.Services.Classes
             {
                 byte[] bytesSenha = Encoding.UTF8.GetBytes(senha);
                 byte[] bytesHashSenha = sha256.ComputeHash(bytesSenha);   
-                hashSenha  =  BitConverter.ToString(bytesHashSenha).ToLower();         
+                hashSenha  =  BitConverter.ToString(bytesHashSenha).Replace("-", "").ToLower();         
             }
             return hashSenha;
         }

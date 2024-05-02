@@ -3328,7 +3328,7 @@
       "code": "NU1803",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "You are running the 'restore' operation with an 'HTTP' source, 'http://nuget.cigamgestor.com.br/Gestor.Api.Nuget/nuget'. Non-HTTPS access will be removed in a future version. Consider migrating to an 'HTTPS' source."
+      "message": "Você está executando a operação 'restore' com uma fonte 'HTTP', 'http://nuget.cigamgestor.com.br/Gestor.Api.Nuget/nuget'. O acesso não HTTPS será removido em uma versão futura. Considere migrar para uma fonte 'HTTPS'."
     }
   ]
 }

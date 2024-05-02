@@ -9,7 +9,7 @@ namespace ControleFinancas.API.Damain.Models
     public class Usuario
     {
         [Key]
-        public long Id { get; set; }
+        public int Id { get; set; }
 
         [Required(ErrorMessage = "O campo de E-mail é obrigatório.")]
         public string Email { get; set; } 

@@ -21,7 +21,7 @@ namespace ControleFinancas.API.Migrations
 
             modelBuilder.Entity("ControleFinancas.API.Damain.Models.Usuario", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
 

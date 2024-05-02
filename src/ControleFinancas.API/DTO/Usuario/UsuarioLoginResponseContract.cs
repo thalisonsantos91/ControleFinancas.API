@@ -7,7 +7,7 @@ namespace ControleFinancas.API.DTO.Usuario
 {
     public class UsuarioLoginResponseContract
     {
-        public long Id {get;set;} 
+        public int Id {get;set;} 
         public string Email {get;set;} = string.Empty;
         public Guid Token {get;set;}
     }
