@@ -5,6 +5,7 @@ using ControleFinancas.API.Damain.Services.Classes;
 using ControleFinancas.API.Data;
 using ControleFinancas.API.Domain.Repository.Classes;
 using ControleFinancas.API.Domain.Repository.Interfaces;
+using ControleFinancas.API.Domain.Services.Classes;
 using ControleFinancas.API.Domain.Services.Interfaces;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
@@ -46,6 +47,7 @@ static void ConfigurarInjecaoDeDependencia(WebApplicationBuilder builder)
     .AddSingleton(builder.Configuration)
     .AddSingleton(builder.Environment)
     .AddSingleton(mapper)
+    .AddScoped<TokenService>()
     .AddScoped<IUsuarioRepository, UsuarioRepository>()
     .AddScoped<IUsuarioService, UsuarioService>();
 

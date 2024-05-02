@@ -11,28 +11,43 @@ using ControleFinancas.API.DTO.Usuario;
 using ControleFinancas.API.Damain.Models;
 using ControleFinancas.API.Domain.Services.Interfaces;
 using ControleFinancas.API.Domain.Repository.Interfaces;
+using ControleFinancas.API.Domain.Services.Classes;
 
 namespace ControleFinancas.API.Damain.Services.Classes
 {
     public class UsuarioService : IUsuarioService
     {
         private readonly IUsuarioRepository _usuarioRepository;
-        private readonly IMapper _mapper;
-
-        // private readonly TokenService _tokenService;
+        private readonly IMapper _mapper;   
+        private readonly TokenService _tokenService;
 
         public UsuarioService(
             IUsuarioRepository usuarioRepository,
-            IMapper mapper
+            IMapper mapper,
+            TokenService tokenService
             )
         {
             _usuarioRepository = usuarioRepository;
             _mapper = mapper;
+            _tokenService = tokenService;
         }
 
-         public Task<UsuarioLoginResponseContract> Autenticar(UsuarioLoginRequestContract usuarioLoginRequest)
+         public async Task<UsuarioLoginResponseContract> Autenticar(UsuarioLoginRequestContract usuarioLoginRequest)
         {
-            throw new NotImplementedException();
+            UsuarioResponseContract usuario = await Obter(usuarioLoginRequest.Email);
+            var hashSenha = GerarHashSenha(usuarioLoginRequest.Senha);
+
+            if(usuario is null || usuario.Senha != hashSenha)
+            {
+                throw new AuthenticationException("Usuário ou senha Inválido.");
+            }
+
+            return new UsuarioLoginResponseContract{
+                
+                Id = usuario.Id,
+                Email = usuario.Email,
+                Token = _tokenService.GerarToken(_mapper.Map<Usuario>(usuario)),
+            };
         }
         
         public async Task<UsuarioResponseContract> Adicionar(UsuarioRequestContract entidade, int IdUsuario)
