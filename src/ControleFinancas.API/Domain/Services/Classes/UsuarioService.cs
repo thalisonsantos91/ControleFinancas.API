@@ -32,23 +32,24 @@ namespace ControleFinancas.API.Damain.Services.Classes
             _tokenService = tokenService;
         }
 
-         public async Task<UsuarioLoginResponseContract> Autenticar(UsuarioLoginRequestContract usuarioLoginRequest)
+    public async Task<UsuarioLoginResponseContract> Autenticar(UsuarioLoginRequestContract usuarioLoginRequest)
         {
             UsuarioResponseContract usuario = await Obter(usuarioLoginRequest.Email);
+        
             var hashSenha = GerarHashSenha(usuarioLoginRequest.Senha);
 
             if(usuario is null || usuario.Senha != hashSenha)
             {
-                throw new AuthenticationException("Usuário ou senha Inválido.");
+                throw new AuthenticationException("Usuário ou senha inválida.");
             }
 
-            return new UsuarioLoginResponseContract{
-                
+            return new UsuarioLoginResponseContract {
                 Id = usuario.Id,
                 Email = usuario.Email,
-                Token = _tokenService.GerarToken(_mapper.Map<Usuario>(usuario)),
-            };
+                Token = _tokenService.GerarToken(_mapper.Map<Usuario>(usuario))
+            };        
         }
+
         
         public async Task<UsuarioResponseContract> Adicionar(UsuarioRequestContract entidade, int IdUsuario)
         {

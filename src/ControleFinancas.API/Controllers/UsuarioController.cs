@@ -30,7 +30,11 @@ namespace ControleFinancas.API.Controllers
     {
         try
         {
-            return  Created("", await _userService.Autenticar(contrato));
+            return  Ok(await _userService.Autenticar(contrato));
+        }
+        catch(AuthenticationException ex)
+        {
+            return Unauthorized(new {StatusCode = 401, message = ex.Message});
         }
         catch(Exception ex)
         {
@@ -74,11 +78,7 @@ namespace ControleFinancas.API.Controllers
         try
         {
             return Ok(await _userService.Obter(id, 0));
-        }
-        catch(AuthenticationException ex)
-        {
-            return Unauthorized(new {StatusCode = 401, message = ex.Message});
-        }
+        }        
         catch(Exception ex)
         {
             return Problem(ex.Message);
