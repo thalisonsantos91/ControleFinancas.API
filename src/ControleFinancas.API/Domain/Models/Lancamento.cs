@@ -6,20 +6,25 @@ using System.Threading.Tasks;
 
 namespace ControleFinancas.API.Damain.Models
 {
-    public class Usuario
+    public class Lancamento
     {
         [Key]
         public int Id { get; set; }
 
-        [Required(ErrorMessage = "O campo de E-mail é obrigatório.")]
-        public string Email { get; set; } 
+        [Required]
+        public int IdUsuario { get; set; }
 
-        [Required(ErrorMessage = "O campo de Senha é obrigatório.")]
-        public string Senha { get; set; }
+        public Usuario Usuario { get; set; }
+
+        [Required(ErrorMessage = "O campo de Descrição é obrigatório.")]
+        public string Descricao { get; set; } = string.Empty;
+
+        public string? Observacao { get; set; } = string.Empty;
 
         [Required]
         public DateTime DataCadastro { get; set;} 
         public DateTime? DataInativacao { get; set; }
+
 
     }
 }

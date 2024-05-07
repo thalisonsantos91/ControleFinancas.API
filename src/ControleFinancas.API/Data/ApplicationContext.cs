@@ -11,12 +11,15 @@ namespace ControleFinancas.API.Data
     public class ApplicationContext : DbContext
     {
         public DbSet<Usuario> Usuario {get;set;}
+        public DbSet<Lancamento> Lancamento {get;set;}
+
         
         public ApplicationContext(DbContextOptions<ApplicationContext> options) : base(options) {}
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new UsuarioMap());
+            modelBuilder.ApplyConfiguration(new LancamentoMap());
         }
     }
 }
