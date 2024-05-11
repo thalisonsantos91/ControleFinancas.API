@@ -28,7 +28,6 @@ namespace ControleFinancas.API.Domain.Repository.Classes
             }
             catch (Exception ex)
             {
-
                 throw new Exception($"Não é possível salvar esse Usuário, {ex}");
             }
 
@@ -50,8 +49,7 @@ namespace ControleFinancas.API.Domain.Repository.Classes
             }
             catch (Exception ex)
             {
-
-                throw new Exception($"Não é possível deleter esse Usuário, {ex}");
+                throw new Exception($"Não é possível Atualizar esse Usuário, {ex}");
             }
 
             return entidade;
