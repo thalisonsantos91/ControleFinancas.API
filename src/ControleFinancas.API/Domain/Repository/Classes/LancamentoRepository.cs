@@ -87,7 +87,7 @@ namespace ControleFinancas.API.Domain.Repository.Classes
                                            .ToListAsync();
         }   
 
-        public async Task<Lancamento?> Obter(long id)
+        public async Task<Lancamento?> Obter(int id)
         {
             if (id <= 0)            
                 throw new ArgumentException("O ID fornecido é inválido.", nameof(id));          
@@ -97,7 +97,7 @@ namespace ControleFinancas.API.Domain.Repository.Classes
                                             .FirstOrDefaultAsync();
         }
 
-        public async Task<IEnumerable<Lancamento>> ObterPeloIdUsuario(long idUsuario)
+        public async Task<IEnumerable<Lancamento>> ObterPeloIdUsuario(int idUsuario)
         {
 
             if (idUsuario <= 0)            

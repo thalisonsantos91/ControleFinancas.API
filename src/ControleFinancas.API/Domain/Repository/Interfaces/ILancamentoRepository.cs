@@ -6,8 +6,8 @@ using ControleFinancas.API.Damain.Models;
 
 namespace ControleFinancas.API.Domain.Repository.Interfaces
 {
-    public interface ILancamentoRepository: IRepository<Lancamento, long>
+    public interface ILancamentoRepository: IRepository<Lancamento, int>
     {
-        Task<IEnumerable<Lancamento>> ObterPeloIdUsuario(long idUsuario);
+        Task<IEnumerable<Lancamento>> ObterPeloIdUsuario(int idUsuario);
     }
 }
