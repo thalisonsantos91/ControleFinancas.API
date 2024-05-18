@@ -12,7 +12,7 @@ namespace ControleFinancas.API.Data
     {
         public DbSet<Usuario> Usuario {get;set;}
         public DbSet<Lancamento> Lancamento {get;set;}
-
+        public DbSet<Apagar> Apagar {get;set;} 
         
         public ApplicationContext(DbContextOptions<ApplicationContext> options) : base(options) {}
 
@@ -20,6 +20,7 @@ namespace ControleFinancas.API.Data
         {
             modelBuilder.ApplyConfiguration(new UsuarioMap());
             modelBuilder.ApplyConfiguration(new LancamentoMap());
+            modelBuilder.ApplyConfiguration(new ApagarMap());
         }
     }
 }

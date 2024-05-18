@@ -51,7 +51,9 @@ static void ConfigurarInjecaoDeDependencia(WebApplicationBuilder builder)
     .AddScoped<TokenService>()
     .AddScoped<IUsuarioRepository, UsuarioRepository>()
     .AddScoped<ILancamentoRepository, LancamentoRepository>()
+    .AddScoped<IApagarRepository, ApagarRepository>()
     .AddScoped<IUsuarioService, UsuarioService>()
+    .AddScoped<IApagarService, ApagarService>()
     .AddScoped<ILancamentoService, LancamentoService>();
 
 }
