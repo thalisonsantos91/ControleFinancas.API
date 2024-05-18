@@ -4,7 +4,7 @@ using System.Linq;
 using System.Security.Authentication;
 using System.Threading.Tasks;
 using ControleFinancas.API.Domain.Services.Interfaces;
-using ControleFinancas.API.DTO.Usuario;
+using ControleFinancas.API.DTO.Lancamento;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
@@ -12,43 +12,24 @@ using Microsoft.AspNetCore.Mvc;
 namespace ControleFinancas.API.Controllers
 {
     [ApiController]
-    [Route("usuarios")]
-    public class UsuarioController : BaseController
+    [Route("Lancamento")]
+    public class LancamentoController : BaseController
     {
-        private readonly IUsuarioService _userService;
+        private readonly ILancamentoService _lancamentoService;
 
-        public UsuarioController(IUsuarioService userService)
+        public LancamentoController(ILancamentoService lancamentoService)
         {
-            _userService = userService;
+            _lancamentoService = lancamentoService;
         }
 
 
     [HttpPost]
-    [Route("login")]
     [AllowAnonymous]
-    public async Task<IActionResult> Autenticar(UsuarioLoginRequestContract contrato)
+    public async Task<IActionResult> Adicionar(LancamentoRequestContract contrato)
     {
         try
         {
-            return  Ok(await _userService.Autenticar(contrato));
-        }
-        catch(AuthenticationException ex)
-        {
-            return Unauthorized(new {StatusCode = 401, message = ex.Message});
-        }
-        catch(Exception ex)
-        {
-            return Problem(ex.Message);
-        }
-    }
-
-    [HttpPost]
-    [AllowAnonymous]
-    public async Task<IActionResult> Adicionar(UsuarioRequestContract contrato)
-    {
-        try
-        {
-            return  Created("", await _userService.Adicionar(contrato, 0));
+            return  Created("", await _lancamentoService.Adicionar(contrato, ObterIdUsuarioLogado()));
         }
         catch(Exception ex)
         {
@@ -62,7 +43,7 @@ namespace ControleFinancas.API.Controllers
     {
         try
         {
-            return Ok(await _userService.Obter(0));
+            return Ok(await _lancamentoService.Obter(ObterIdUsuarioLogado()));
         }
         catch(Exception ex)
         {
@@ -77,7 +58,7 @@ namespace ControleFinancas.API.Controllers
     {
         try
         {
-            return Ok(await _userService.Obter(id, 0));
+            return Ok(await _lancamentoService.Obter(id, ObterIdUsuarioLogado()));
         }        
         catch(Exception ex)
         {
@@ -92,7 +73,7 @@ namespace ControleFinancas.API.Controllers
     {
         try
         {
-            await _userService.Inativar(id, 0);
+            await _lancamentoService.Inativar(id, ObterIdUsuarioLogado());
             return NoContent();
         }
         catch(Exception ex)
@@ -104,11 +85,11 @@ namespace ControleFinancas.API.Controllers
     [HttpPut]
     [Route("{id}")]
     [Authorize]
-    public async Task<IActionResult> Atualizar(int id, UsuarioRequestContract contrato)
+    public async Task<IActionResult> Atualizar(int id, LancamentoRequestContract contrato)
     {
         try
         {
-            return Ok(await _userService.Atualizar( contrato, id, 0));
+            return Ok(await _lancamentoService.Atualizar( contrato, id, ObterIdUsuarioLogado()));
         }
         catch(Exception ex)
         {

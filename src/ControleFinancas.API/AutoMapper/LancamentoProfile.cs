@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using ControleFinancas.API.Damain.Models;
-using ControleFinancas.API.DTO.NaturezaDeLancamento;
+using ControleFinancas.API.DTO.Lancamento;
 using ControleFinancas.API.DTO.Usuario;
 
 namespace ControleFinancas.API.AutoMapper

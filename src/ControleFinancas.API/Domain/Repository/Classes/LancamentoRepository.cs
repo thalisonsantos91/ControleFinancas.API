@@ -36,7 +36,8 @@ namespace ControleFinancas.API.Domain.Repository.Classes
 
         public async Task<Lancamento> Atualizar(Lancamento entidade)
         { 
-            var lancamentoId = ConsultarPeloId(entidade);
+            var lancamentoId = await ConsultarPeloId(entidade);
+            
             try
             {
                 if (lancamentoId != null)
@@ -59,7 +60,7 @@ namespace ControleFinancas.API.Domain.Repository.Classes
         { 
             try
             {
-                var lancamentoId = ConsultarPeloId(entidade);
+                var lancamentoId = await ConsultarPeloId(entidade);
                 
                 if (lancamentoId != null)
                 {
@@ -111,7 +112,7 @@ namespace ControleFinancas.API.Domain.Repository.Classes
 
         private async Task<Lancamento> ConsultarPeloId(Lancamento entidade)
         {
-            var lancamentoId = await _contexto.Lancamento.FirstOrDefaultAsync(u => u.Id == entidade.Id);
+            var lancamentoId = await _contexto.Lancamento.Where(x=>x.Id == entidade.Id).FirstOrDefaultAsync();
             return lancamentoId;
         }
 
