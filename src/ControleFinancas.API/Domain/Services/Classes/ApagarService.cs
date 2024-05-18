@@ -50,8 +50,8 @@ namespace ControleFinancas.API.Domain.Services.Classes
 
         public async Task<IEnumerable<ApagarResponseContract>> Obter(int idUsuario)
         {
-            var titulosApagar = await _apagarRepository.ObterPeloIdUsuario(idUsuario);
-            return titulosApagar.Select(titulo => _mapper.Map<ApagarResponseContract>(titulo));
+            var contasApagar = await _apagarRepository.ObterPeloIdUsuario(idUsuario);
+            return contasApagar.Select(contas => _mapper.Map<ApagarResponseContract>(contas));
         }
 
         public async Task<ApagarResponseContract> Obter(int id, int idUsuario)
@@ -66,7 +66,7 @@ namespace ControleFinancas.API.Domain.Services.Classes
             var apagar = await _apagarRepository.Obter(id);
             
             if (apagar is null || apagar.IdUsuario != idUsuario)
-                throw new Exception($"Não foi encontrada nenhum titulo apagar pelo Id: {id}");
+                throw new Exception($"Não foi encontrada nenhuma conta a apagar pelo Id: {id}");
 
             
             return apagar;

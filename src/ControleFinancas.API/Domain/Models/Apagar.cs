@@ -35,8 +35,8 @@ namespace ControleFinancas.API.Damain.Models
         [Required]
         public DateTime DataCadastro { get; set;}        
         
-        [Required(ErrorMessage = "O campo de DataVancimento é obrigatório.")]
-        public DateTime DataVancimento { get; set;} 
+        [Required(ErrorMessage = "O campo de DataVencimento é obrigatório.")]
+        public DateTime DataVencimento { get; set;} 
         public DateTime? DataInativacao { get; set; }
         public DateTime? DataReferencia { get; set; }
         public DateTime? DataPagamento { get; set; }

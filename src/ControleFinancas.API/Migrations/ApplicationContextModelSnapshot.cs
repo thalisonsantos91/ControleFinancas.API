@@ -37,7 +37,7 @@ namespace ControleFinancas.API.Migrations
                     b.Property<DateTime?>("DataReferencia")
                         .HasColumnType("timestamp");
 
-                    b.Property<DateTime>("DataVancimento")
+                    b.Property<DateTime>("DataVencimento")
                         .HasColumnType("timestamp");
 
                     b.Property<string>("Descricao")

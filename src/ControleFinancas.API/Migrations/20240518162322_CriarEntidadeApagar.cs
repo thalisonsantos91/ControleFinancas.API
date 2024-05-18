@@ -27,7 +27,7 @@ namespace ControleFinancas.API.Migrations
                     ValorOriginal = table.Column<double>(type: "double precision", nullable: false),
                     ValorPago = table.Column<double>(type: "double precision", nullable: false),
                     DataCadastro = table.Column<DateTime>(type: "timestamp", nullable: false),
-                    DataVancimento = table.Column<DateTime>(type: "timestamp", nullable: false),
+                    DataVencimento = table.Column<DateTime>(type: "timestamp", nullable: false),
                     DataReferencia = table.Column<DateTime>(type: "timestamp", nullable: true),
                     DataPagamento = table.Column<DateTime>(type: "timestamp", nullable: true),
                     DataInativacao = table.Column<DateTime>(type: "timestamp", nullable: true)

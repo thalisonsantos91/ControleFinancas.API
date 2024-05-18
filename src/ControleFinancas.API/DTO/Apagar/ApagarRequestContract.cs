@@ -12,8 +12,8 @@ namespace ControleFinancas.API.DTO.Apagar
         public string Observacao { get; set; } = string.Empty;
         public double ValorOriginal { get; set; } 
         public double ValorPago { get; set; }
-        public DateTime? Datareferencia { get; set; }
-        public DateTime DatareVencimento { get; set; }
+        public DateTime? DataReferencia { get; set; }
+        public DateTime DataVencimento { get; set; }
         public DateTime? DataPagamento { get; set; }
     }
 }

@@ -42,7 +42,7 @@ namespace ControleFinancas.API.Data.Mappings
             .HasColumnType("timestamp")
             .IsRequired();
             
-            builder.Property(p => p.DataVancimento)
+            builder.Property(p => p.DataVencimento)
             .HasColumnType("timestamp")
             .IsRequired();
 
