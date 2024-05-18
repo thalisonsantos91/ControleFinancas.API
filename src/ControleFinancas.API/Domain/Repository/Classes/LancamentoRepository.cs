@@ -66,7 +66,7 @@ namespace ControleFinancas.API.Domain.Repository.Classes
                 {
                     // Exclusão lógica, só altera a data de inativação.
                     entidade.DataInativacao = DateTime.Now;
-                    await _contexto.SaveChangesAsync();
+                    await Atualizar(entidade);
                 }
                 else
                 {
