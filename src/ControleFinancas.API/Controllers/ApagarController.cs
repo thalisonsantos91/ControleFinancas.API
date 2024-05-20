@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace ControleFinancas.API.Controllers
 {
     [ApiController]
-    [Route("Apagar")]
+    [Route("Contas-Apagar")]
     public class ApagarController : BaseController
     {
         private readonly IApagarService _apagarService;
