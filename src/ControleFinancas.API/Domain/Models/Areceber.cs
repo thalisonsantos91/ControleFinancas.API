@@ -7,11 +7,10 @@ using ControleFinancas.API.Domain.Models;
 
 namespace ControleFinancas.API.Damain.Models
 {
-    public class Apagar : Titulo
-    {    
-        [Required(ErrorMessage = "O campo de ValorPago é obrigatório.")]
-        public double ValorPago { get; set; } 
-        public DateTime? DataPagamento { get; set; }
-
+    public class Areceber : Titulo
+    {        
+        [Required(ErrorMessage = "O campo de ValorRecebido é obrigatório.")]
+        public double ValorRecebido { get; set; } 
+        public DateTime? DataRecebimento { get; set; }
     }
 }

@@ -41,6 +41,7 @@ static void ConfigurarInjecaoDeDependencia(WebApplicationBuilder builder)
         cfg.AddProfile<UsuarioProfile>();
         cfg.AddProfile<LancamentoProfile>();
         cfg.AddProfile<ApagarProfile>();
+        cfg.AddProfile<AreceberProfile>();
     });
 
     IMapper mapper= config.CreateMapper();
