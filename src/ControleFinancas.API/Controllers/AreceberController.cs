@@ -1,6 +1,6 @@
 
 using ControleFinancas.API.Domain.Services.Interfaces;
-using ControleFinancas.API.DTO.Apagar;
+using ControleFinancas.API.DTO.Areceber;
 using ControleFinancas.API.Exceptions;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -8,24 +8,24 @@ using Microsoft.AspNetCore.Mvc;
 namespace ControleFinancas.API.Controllers
 {
     [ApiController]
-    [Route("Contas-apagar")]
-    public class ApagarController : BaseController
+    [Route("Contas-areceber")]
+    public class AreceberController : BaseController
     {
-        private readonly IApagarService _apagarService;
+        private readonly IAreceberService _areceberService;
 
-        public ApagarController(IApagarService apagarService)
+        public AreceberController(IAreceberService apagarService)
         {
-            _apagarService = apagarService;
+            _areceberService = apagarService;
         }
 
 
     [HttpPost]
     [AllowAnonymous]
-    public async Task<IActionResult> Adicionar(ApagarRequestContract contrato)
+    public async Task<IActionResult> Adicionar(AreceberRequestContract contrato)
     {
         try
         {
-            return  Created("", await _apagarService.Adicionar(contrato, ObterIdUsuarioLogado()));
+            return  Created("", await _areceberService.Adicionar(contrato, ObterIdUsuarioLogado()));
         }
         catch (NotFoundException ex)
         {
@@ -47,7 +47,7 @@ namespace ControleFinancas.API.Controllers
     {
         try
         {
-            return Ok(await _apagarService.Obter(ObterIdUsuarioLogado()));
+            return Ok(await _areceberService.Obter(ObterIdUsuarioLogado()));
         }
         catch(Exception ex)
         {
@@ -62,7 +62,7 @@ namespace ControleFinancas.API.Controllers
     {
         try
         {
-            return Ok(await _apagarService.Obter(id, ObterIdUsuarioLogado()));
+            return Ok(await _areceberService.Obter(id, ObterIdUsuarioLogado()));
         }
         catch (NotFoundException ex)
         {
@@ -81,7 +81,7 @@ namespace ControleFinancas.API.Controllers
     {
         try
         {
-            await _apagarService.Inativar(id, ObterIdUsuarioLogado());
+            await _areceberService.Inativar(id, ObterIdUsuarioLogado());
             return NoContent();
         }
         catch (NotFoundException ex)
@@ -97,11 +97,11 @@ namespace ControleFinancas.API.Controllers
     [HttpPut]
     [Route("{id}")]
     [Authorize]
-    public async Task<IActionResult> Atualizar(int id, ApagarRequestContract contrato)
+    public async Task<IActionResult> Atualizar(int id, AreceberRequestContract contrato)
     {
         try
         {
-            return Ok(await _apagarService.Atualizar( contrato, id, ObterIdUsuarioLogado()));
+            return Ok(await _areceberService.Atualizar( contrato, id, ObterIdUsuarioLogado()));
         }
         catch (NotFoundException ex)
         {

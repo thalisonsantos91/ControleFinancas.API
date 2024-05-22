@@ -5,6 +5,7 @@ using System.Security.Authentication;
 using System.Threading.Tasks;
 using ControleFinancas.API.Domain.Services.Interfaces;
 using ControleFinancas.API.DTO.Usuario;
+using ControleFinancas.API.Exceptions;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
@@ -50,6 +51,14 @@ namespace ControleFinancas.API.Controllers
         {
             return  Created("", await _userService.Adicionar(contrato, 0));
         }
+        catch (NotFoundException ex)
+        {
+          return NotFound(RetornarModelNotFound(ex));
+        }
+        catch (BadRequestException ex)
+        {
+          return BadRequest(RetornarModelBadRequest(ex));
+        }
         catch(Exception ex)
         {
             return Problem(ex.Message);
@@ -78,7 +87,11 @@ namespace ControleFinancas.API.Controllers
         try
         {
             return Ok(await _userService.Obter(id, 0));
-        }        
+        } 
+        catch (NotFoundException ex)
+        {
+          return NotFound(RetornarModelNotFound(ex));
+        }       
         catch(Exception ex)
         {
             return Problem(ex.Message);
@@ -95,6 +108,10 @@ namespace ControleFinancas.API.Controllers
             await _userService.Inativar(id, 0);
             return NoContent();
         }
+        catch (NotFoundException ex)
+        {
+          return NotFound(RetornarModelNotFound(ex));
+        } 
         catch(Exception ex)
         {
             return Problem(ex.Message);
@@ -109,6 +126,14 @@ namespace ControleFinancas.API.Controllers
         try
         {
             return Ok(await _userService.Atualizar( contrato, id, 0));
+        }
+        catch (NotFoundException ex)
+        {
+          return NotFound(RetornarModelNotFound(ex));
+        } 
+        catch (BadRequestException ex)
+        {
+          return BadRequest(RetornarModelBadRequest(ex));
         }
         catch(Exception ex)
         {

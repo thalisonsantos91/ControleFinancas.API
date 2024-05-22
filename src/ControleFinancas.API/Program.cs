@@ -52,10 +52,12 @@ static void ConfigurarInjecaoDeDependencia(WebApplicationBuilder builder)
     .AddSingleton(mapper)
     .AddScoped<TokenService>()
     .AddScoped<IUsuarioRepository, UsuarioRepository>()
-    .AddScoped<ILancamentoRepository, LancamentoRepository>()
-    .AddScoped<IApagarRepository, ApagarRepository>()
     .AddScoped<IUsuarioService, UsuarioService>()
+    .AddScoped<IApagarRepository, ApagarRepository>()
     .AddScoped<IApagarService, ApagarService>()
+    .AddScoped<IAreceberRepository, AreceberRepository>()
+    .AddScoped<IAreceberService, AreceberService>()
+    .AddScoped<ILancamentoRepository, LancamentoRepository>()
     .AddScoped<ILancamentoService, LancamentoService>();
 
 }

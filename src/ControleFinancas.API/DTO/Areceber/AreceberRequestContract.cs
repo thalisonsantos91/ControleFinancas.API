@@ -14,6 +14,6 @@ namespace ControleFinancas.API.DTO.Areceber
         public double ValorRecebido { get; set; }
         public DateTime? DataReferencia { get; set; }
         public DateTime DataVencimento { get; set; }
-        public DateTime? DataReceber { get; set; }
+        public DateTime? DataRecebimento { get; set; }
     }
 }
