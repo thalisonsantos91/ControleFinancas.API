@@ -7,6 +7,7 @@ using ControleFinancas.API.Damain.Models;
 using ControleFinancas.API.Domain.Repository.Interfaces;
 using ControleFinancas.API.Domain.Services.Interfaces;
 using ControleFinancas.API.DTO.Lancamento;
+using ControleFinancas.API.Exceptions;
 
 namespace ControleFinancas.API.Domain.Services.Classes
 {
@@ -68,7 +69,7 @@ namespace ControleFinancas.API.Domain.Services.Classes
             var lancamento = await _lancamentoRepository.Obter(id);
             
             if (lancamento is null || lancamento.IdUsuario != idUsuario)
-                throw new Exception($"Não foi encontrada nenhum lançamento pelo Id: {id}");
+                throw new NotFoundException($"Não foi encontrada nenhum lançamento pelo Id: {id}");
 
             
             return lancamento;

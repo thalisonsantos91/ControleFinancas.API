@@ -4,6 +4,7 @@ using ControleFinancas.API.Domain.Repository.Interfaces;
 using ControleFinancas.API.Domain.Services.Interfaces;
 using ControleFinancas.API.DTO.Apagar;
 using ControleFinancas.API.DTO.Areceber;
+using ControleFinancas.API.Exceptions;
 
 namespace ControleFinancas.API.Domain.Services.Classes
 {
@@ -67,7 +68,7 @@ namespace ControleFinancas.API.Domain.Services.Classes
             var areceber = await _areceberRepository.Obter(id);
             
             if (areceber is null || areceber.IdUsuario != idUsuario)
-                throw new Exception($"Não foi encontrada nenhuma conta a areceber pelo Id: {id}");
+                throw new NotFoundException($"Não foi encontrada nenhuma conta a areceber pelo Id: {id}");
 
             
             return areceber;

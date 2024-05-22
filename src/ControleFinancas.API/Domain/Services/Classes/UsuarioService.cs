@@ -12,6 +12,7 @@ using ControleFinancas.API.Damain.Models;
 using ControleFinancas.API.Domain.Services.Interfaces;
 using ControleFinancas.API.Domain.Repository.Interfaces;
 using ControleFinancas.API.Domain.Services.Classes;
+using ControleFinancas.API.Exceptions;
 
 namespace ControleFinancas.API.Damain.Services.Classes
 {
@@ -62,7 +63,7 @@ namespace ControleFinancas.API.Damain.Services.Classes
 
         public async Task<UsuarioResponseContract> Atualizar(UsuarioRequestContract entidade, int id, int idUsuario)
         {
-            _ = await _usuarioRepository.Obter(id) ?? throw new Exception("Usuário não encontrado para Atualização.");
+            _ = await _usuarioRepository.Obter(id) ?? throw new NotFoundException("Usuário não encontrado para Atualização.");
             var usuario = _mapper.Map<Usuario>(entidade);
             usuario.Id = id;
             usuario.Senha = GerarHashSenha(entidade.Senha);
@@ -73,7 +74,7 @@ namespace ControleFinancas.API.Damain.Services.Classes
 
         public async Task Inativar(int id, int idUsuario)
         {
-            var usuario = await Obter(id, idUsuario) ?? throw new Exception("Usuário não encontrado para Inativação.");
+            var usuario = await Obter(id, idUsuario) ?? throw new NotFoundException("Usuário não encontrado para Inativação.");
             await _usuarioRepository.Deletar(_mapper.Map<Usuario>(usuario));
         }
 

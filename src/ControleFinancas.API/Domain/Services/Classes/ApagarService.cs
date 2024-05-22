@@ -3,6 +3,7 @@ using ControleFinancas.API.Damain.Models;
 using ControleFinancas.API.Domain.Repository.Interfaces;
 using ControleFinancas.API.Domain.Services.Interfaces;
 using ControleFinancas.API.DTO.Apagar;
+using ControleFinancas.API.Exceptions;
 
 namespace ControleFinancas.API.Domain.Services.Classes
 {
@@ -66,7 +67,7 @@ namespace ControleFinancas.API.Domain.Services.Classes
             var apagar = await _apagarRepository.Obter(id);
             
             if (apagar is null || apagar.IdUsuario != idUsuario)
-                throw new Exception($"Não foi encontrada nenhuma conta a apagar pelo Id: {id}");
+                throw new NotFoundException($"Não foi encontrada nenhuma conta a apagar pelo Id: {id}");
 
             
             return apagar;

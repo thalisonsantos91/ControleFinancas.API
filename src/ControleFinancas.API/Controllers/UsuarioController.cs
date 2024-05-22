@@ -35,7 +35,7 @@ namespace ControleFinancas.API.Controllers
         }
         catch(AuthenticationException ex)
         {
-            return Unauthorized(new {StatusCode = 401, message = ex.Message});
+            return Unauthorized(RetornarModelUnauthorized(ex));
         }
         catch(Exception ex)
         {
