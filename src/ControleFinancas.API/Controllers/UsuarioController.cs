@@ -13,7 +13,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace ControleFinancas.API.Controllers
 {
     [ApiController]
-    [Route("usuarios")]
+    [Route("api/usuarios")]
     public class UsuarioController : BaseController
     {
         private readonly IUsuarioService _userService;

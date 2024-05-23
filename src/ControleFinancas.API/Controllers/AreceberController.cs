@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace ControleFinancas.API.Controllers
 {
     [ApiController]
-    [Route("Contas-areceber")]
+    [Route("api/Contas-areceber")]
     public class AreceberController : BaseController
     {
         private readonly IAreceberService _areceberService;

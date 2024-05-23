@@ -13,7 +13,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace ControleFinancas.API.Controllers
 {
     [ApiController]
-    [Route("Lancamento-Contas")]
+    [Route("api/Lancamento-Contas")]
     public class LancamentoController : BaseController
     {
         private readonly ILancamentoService _lancamentoService;
